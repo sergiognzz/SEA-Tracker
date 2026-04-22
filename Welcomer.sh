@@ -56,20 +56,14 @@ cat << "EOF"
 ███████║███████╗██║  ██║       ██║   ██║  ██║██║  ██║╚██████╗██║  ██╗███████╗██║  ██║
 ╚══════╝╚══════╝╚═╝  ╚═╝       ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
 EOF
-echo -e "${RESET}"
 
-# --------
+echo -e "${RESET}"
+loading_bar
 echo
 typewriter ">> DEVELOPED & PROGRAMMED BY: SEERGIOXPL.SH" "$YELLOW"
-echo
-
-glitch_line
-
-loading_bar
+echo ""
 sleep 0.3
-
-echo
-# ---- NUEVO DIBUJO EN ASCII ----
+echo ""
 cat << "EOF"
 ─────────────────────────────────
 ───────────────▄████████▄────────
