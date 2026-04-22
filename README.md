@@ -37,8 +37,11 @@ All from a simple and interactive CLI interface.
 ---
 
 ## 🖥️ Interface Preview
+<img width="1085" height="1368" alt="image" src="https://github.com/user-attachments/assets/3962670b-ec00-4983-be6c-6dd582bf33bb" />
+<img width="1104" height="356" alt="image" src="https://github.com/user-attachments/assets/5dcc7ed2-a204-49e0-bd92-d60685b17cd2" />
 
-📸 **[INSERT IMAGE HERE – Terminal UI / Menu]**
+
+
 
 ---
 
