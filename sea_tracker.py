@@ -40,6 +40,6 @@ if __name__ == "__main__":
             helpPanel()
             sys.exit(1)
         else:  
-            os.system("bash Welcomer.sh")
+            m.locate_welcomer()
             m.main(targetTracked,True)
     
