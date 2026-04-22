@@ -3,6 +3,7 @@ import os
 import methods as m
 from termcolor import colored
 import sys
+from pathlib import Path
 
 def parameters():
     try:
@@ -16,6 +17,12 @@ def parameters():
         return None
     else:
         return target
+    
+def locate_welcomer():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    script_path = os.path.join(base_dir, "animationStart.sh")
+    os.system(f"bash {script_path}")
+
 
 def helpPanel():
     print(colored("HELP PANEL - Sea Tracker", "cyan"))
@@ -29,7 +36,7 @@ def helpPanel():
 if __name__ == "__main__":
         targetTracked = parameters()
         if targetTracked == 0:
-            os.system("bash Welcomer.sh")
+            locate_welcomer()
             m.main(targetTracked,False)
         elif targetTracked is None:
             print(colored("[!] No valid target provided. Please provide a target as a command-line argument.", "red"))

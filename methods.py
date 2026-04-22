@@ -164,10 +164,14 @@ def user_tracker(username):
 
 def personal_information():
     try:
-        os.system("bash info.sh")
+        locate_info()
     except Exception as e:
         print(colored(f"Error: {e}", "red"))
 
+def locate_info():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    script_path = os.path.join(base_dir, "seaTrackerInfo.sh")
+    os.system(f"bash {script_path}")
 
 def HelpPanelInsert():
     print(colored("Help panel to insert targets", "cyan"))
