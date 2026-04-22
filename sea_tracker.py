@@ -23,11 +23,20 @@ def parameters():
 def helpPanel():
     print(colored("HELP PANEL - Sea Tracker", "cyan"))
     print("")
+    print(colored("If you dont have a tool instelled in the system","yellow"))
     print(colored("Usage: python3 sea_tracker.py <target>", "green"))
     print(colored("Example:","yellow")+colored(" python3 sea_tracker.py 8.8.8.8 (ip tracker)", "cyan"))
     print(colored("Example:","yellow")+colored(" python3 sea_tracker.py +34123456789 (phone tracker)", "cyan"))
     print(colored("Example:","yellow")+colored(" python3 sea_tracker.py seergiognzz (user tracker)", "cyan"))
     print("")
+    print("")
+    print(colored("If you have a tool instelled in the system","yellow"))
+    print(colored("Usage: sea-tracker <target>", "green"))
+    print(colored("Example:","yellow")+colored(" sea_tracker 8.8.8.8 (ip tracker)", "cyan"))
+    print(colored("Example:","yellow")+colored(" sea_tracker +34123456789 (phone tracker)", "cyan"))
+    print(colored("Example:","yellow")+colored(" sea_tracker seergiognzz (user tracker)", "cyan"))
+    print("")
+
 
 if __name__ == "__main__":
         targetTracked = parameters()
