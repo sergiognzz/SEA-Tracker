@@ -41,5 +41,6 @@ if __name__ == "__main__":
             sys.exit(1)
         else:  
             m.locate_welcomer()
+            print("")
             m.main(targetTracked,True)
     
