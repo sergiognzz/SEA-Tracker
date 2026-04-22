@@ -172,6 +172,11 @@ def locate_info():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     script_path = os.path.join(base_dir, "seaTrackerInfo.sh")
     os.system(f"bash {script_path}")
+    
+def locate_welcomer():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    script_path = os.path.join(base_dir, "animationStart.sh")
+    os.system(f"bash {script_path}")
 
 def HelpPanelInsert():
     print(colored("Help panel to insert targets", "cyan"))
