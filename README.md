@@ -2,14 +2,6 @@
 > _“Track smarter. Discover faster. Stay invisible.”_
 ---
 
-## 💙 Dedication
-
-This project is dedicated to someone very special to me.
-
-The name **"Sea Tracker"** is not just random — it carries a personal meaning.  
-It was chosen in honor of my girlfriend, as a small tribute to her and the inspiration she brings into my life.
-
-Sometimes, behind lines of code, there are real emotions.
 
 ---
 
@@ -20,6 +12,18 @@ Sometimes, behind lines of code, there are real emotions.
   <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">
   <img src="https://img.shields.io/badge/License-MIT-lightgrey?style=for-the-badge">
 </p>
+
+---
+
+
+## 💙 Dedication
+
+This project is dedicated to someone very special to me.
+
+The name **"Sea Tracker"** is not just random — it carries a personal meaning.  
+It was chosen in honor of my girlfriend, as a small tribute to her and the inspiration she brings into my life.
+
+Sometimes, behind lines of code, there are real emotions.
 
 ---
 
