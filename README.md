@@ -1,7 +1,5 @@
 # 🌊 SEA TRACKER  
 > _“Track smarter. Discover faster. Stay invisible.”_
----
-
 
 ---
 
