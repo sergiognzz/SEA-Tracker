@@ -1,5 +1,18 @@
 # 🌊 SEA TRACKER  
 > _“Track smarter. Discover faster. Stay invisible.”_
+---
+
+## 💙 Dedication
+
+This project is dedicated to someone very special to me.
+
+The name **"Sea Tracker"** is not just random — it carries a personal meaning.  
+It was chosen in honor of my girlfriend, as a small tribute to her and the inspiration she brings into my life.
+
+Sometimes, behind lines of code, there are real emotions.
+
+---
+
 
 <p align="center">
   <img src="https://img.shields.io/badge/OSINT-Tool-blue?style=for-the-badge">
