@@ -100,7 +100,7 @@ pip install requests phonenumbers termcolor
 ### Option 1 – Manual
 
 ```bash
-git clone https://github.com/yourusername/sea-tracker.git
+git clone https://github.com/sergiognzz/sea-tracker.git
 cd sea-tracker
 chmod +x sea_tracker.py
 ```
@@ -137,14 +137,20 @@ python3 sea_tracker.py <target>
 ```bash
 python3 sea_tracker.py 8.8.8.8
 python3 sea_tracker.py +34123456789
-python3 sea_tracker.py username
+python3 sea_tracker.py <username>
+
+sea-tracker 8.8.8.8
+sea-tracker +34123456789
+sea-tracker <username>
+
 ```
 
 ---
 
 ## 🖼️ Example Execution
 
-📸 **[INSERT IMAGE HERE – Example run output]**
+<img width="797" height="406" alt="image" src="https://github.com/user-attachments/assets/8adccf46-30dd-4b88-82ec-4f9cd841f304" />
+
 
 ---
 
@@ -159,7 +165,8 @@ python3 sea_tracker.py username
 6. Exit
 ```
 
-📸 **[INSERT IMAGE HERE – Menu screenshot]**
+<img width="1104" height="356" alt="image" src="https://github.com/user-attachments/assets/22d488f2-58d2-4329-bdba-88740b13c22d" />
+
 
 ---
 
@@ -179,7 +186,8 @@ Uses an external API to gather geolocation and network data.
 - Timezone info  
 - Google Maps link  
 
-📸 **[INSERT IMAGE HERE – IP tracking output]**
+<img width="1131" height="950" alt="image" src="https://github.com/user-attachments/assets/f12c8b2a-6139-40dc-b5e6-8669b5c50ba0" />
+
 
 ---
 
@@ -196,7 +204,8 @@ Analyzes phone numbers using `phonenumbers`.
 - Formats (International, E164, Local)  
 - Number type (Mobile / Fixed)  
 
-📸 **[INSERT IMAGE HERE – Phone tracking output]**
+<img width="1176" height="773" alt="image" src="https://github.com/user-attachments/assets/b3c1ec39-f1f4-4ed7-a191-735346574a39" />
+
 
 ---
 
@@ -224,7 +233,8 @@ Searches a username across multiple platforms.
 - ❌ Not Found → "Not Found"  
 - ⚠️ Error → Request issue  
 
-📸 **[INSERT IMAGE HERE – User tracking output]**
+<img width="863" height="1048" alt="image" src="https://github.com/user-attachments/assets/4e413278-8e6e-49cb-8439-3884d37af14c" />
+
 
 ---
 
@@ -241,7 +251,8 @@ Displays local machine information via shell script.
 - Local IP  
 - Public IP  
 
-📸 **[INSERT IMAGE HERE – System info output]**
+<img width="1124" height="629" alt="image" src="https://github.com/user-attachments/assets/63a9fbf7-0196-412b-a917-c25c11d2f404" />
+
 
 ---
 
@@ -254,7 +265,8 @@ Useful for:
 - Switching targets quickly  
 - Running multiple checks without restarting  
 
-📸 **[INSERT IMAGE HERE – Manual target input]**
+<img width="497" height="281" alt="image" src="https://github.com/user-attachments/assets/40eb7a18-bd85-4711-a218-f828108780e9" />
+
 
 ---
 
