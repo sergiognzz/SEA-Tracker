@@ -115,7 +115,7 @@ pip install requests phonenumbers termcolor
 ### Option 1 – Manual
 
 ```bash
-git clone https://github.com/sergiognzz/sea-tracker.git
+https://github.com/sergiognzz/SEA-Tracker.git
 cd sea-tracker
 chmod +x sea_tracker.py
 ```
