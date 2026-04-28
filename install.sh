@@ -8,8 +8,7 @@ CONFIG_DIR="$HOME/.config/$APP_NAME"
 PROJECT_DIR="$(pwd)"
 MAIN_FILE="sea_tracker.py"
 
-REPO_URL="https://github.com/tu-usuario/tu-repo.git"
-
+REPO_URL="https://github.com/sergiognzz/SEA-Tracker.git"
 echo "Installing $APP_NAME..."
 
 # Clone repository
