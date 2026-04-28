@@ -4,47 +4,46 @@ set -e
 
 APP_NAME="sea-tracker"
 INSTALL_DIR="/usr/local/bin"
-CONFIG_DIR="$HOME/.config/sea-tracker"
+CONFIG_DIR="$HOME/.config/$APP_NAME"
 PROJECT_DIR="$(pwd)"
 MAIN_FILE="sea_tracker.py"
 
+REPO_URL="https://github.com/tu-usuario/tu-repo.git"
+
 echo "Installing $APP_NAME..."
 
-# Check if main file exists in current directory
-if [ ! -f "$PROJECT_DIR/$MAIN_FILE" ]; then
-    echo "Error: $MAIN_FILE not found in current directory"
+# Clone repository
+echo "Cloning repository into $CONFIG_DIR..."
+rm -rf "$CONFIG_DIR"
+git clone "$REPO_URL" "$CONFIG_DIR"
+
+# main file comprobation
+if [ ! -f "$CONFIG_DIR/$MAIN_FILE" ]; then
+    echo "Error: $MAIN_FILE not found in cloned repository"
     exit 1
 fi
 
-# Create config directory
-echo "Creating config directory at $CONFIG_DIR"
-mkdir -p "$CONFIG_DIR"
-
-# Copy entire repository to config directory
-echo "Copying project files..."
-rsync -av --exclude ".git" "$PROJECT_DIR/" "$CONFIG_DIR/"
-
-# Move into the new directory
+# go to coppied directory
 cd "$CONFIG_DIR"
 
-# Ensure main file exists after copy
-if [ ! -f "$CONFIG_DIR/$MAIN_FILE" ]; then
-    echo "Error: $MAIN_FILE not found after copying"
-    exit 1
-fi
+# make executable
+chmod +x "$MAIN_FILE"
 
-# Make script executable
-chmod +x "$CONFIG_DIR/$MAIN_FILE"
-
-# Add shebang if missing
-if ! head -n 1 "$CONFIG_DIR/$MAIN_FILE" | grep -q "^#!"; then
+# Add shebang
+if ! head -n 1 "$MAIN_FILE" | grep -q "^#!"; then
     echo "Adding shebang..."
-    sed -i '1i #!/usr/bin/env python3' "$CONFIG_DIR/$MAIN_FILE"
+    sed -i '1i #!/usr/bin/env python3' "$MAIN_FILE"
 fi
 
-# Create symlink in /usr/local/bin
+# make symlink
 echo "Creating symlink in $INSTALL_DIR/$APP_NAME"
 sudo ln -sf "$CONFIG_DIR/$MAIN_FILE" "$INSTALL_DIR/$APP_NAME"
 
 echo "Installation completed."
 echo "You can now run: $APP_NAME"
+
+echo "Removing original project directory: $PROJECT_DIR"
+cd ~
+rm -rf "$PROJECT_DIR"
+
+echo "Cleanup completed."
