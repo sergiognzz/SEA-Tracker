@@ -5,6 +5,7 @@ import time
 import os
 from phonenumbers import geocoder, carrier, timezone
 import phonenumbers
+import subprocess
 import socket
 from urllib.parse import urlparse
 
@@ -58,7 +59,8 @@ def menu_options():
     print(colored("4. Show pc info", "green"))
     print(colored("5. Insert target manually", "green"))
     print(colored("6. Track IP by URL", "green"))
-    print(colored("7. Exit", "red"))
+    print(colored("7. App settings","magenta"))
+    print(colored("8. Exit", "red"))
 
 
 def phone_tracker(telephone_number):
@@ -175,6 +177,18 @@ def locate_info():
     base_dir = os.path.dirname(os.path.abspath(__file__))
     script_path = os.path.join(base_dir, "seaTrackerInfo.sh")
     os.system(f"bash {script_path}")
+
+def locate_installer():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    script_path = os.path.join(base_dir,"install.sh")
+    os.system(f"chmod +x {script_path}")
+    os.system(f"bash {script_path}")
+
+def locate_unistaller():
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    script_path = os.path.join(base_dir,"unistaller.sh")
+    os.system(f"chmod +x {script_path}")
+    os.system(f"bash {script_path}")
     
 def locate_welcomer():
     base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -197,6 +211,19 @@ def get_ip_from_url(url):
         print(colored(f"IP address for ", "blue") + colored(url, "cyan") + colored(" -> ", "blue") + colored(ip, "yellow"))
     except:
         print(colored(f"Could not resolve IP address for {url}", "red"))
+
+
+def update_repo(path):
+    result = subprocess.run(
+        ["git", "-C", path, "pull"],
+        capture_output=True,
+        text=True
+    )
+    
+    if result.returncode != 0:
+        raise Exception(result.stderr)
+    
+    return result.stdout
 
 
 def main(target, control):
@@ -285,6 +312,48 @@ def main(target, control):
                     except:
                         print(colored("[!] An error has occurred while the program is tracking ip of the target url.","red"))
                 case 7:
+                    os.system("clear")
+                    print(colored("-----------------App settings ---------------------","cyan"))
+                    print(colored("                 1. Install App                    ","yellow"))
+                    print(colored("                 2. Unistall App [!]                   ","red"))
+                    print(colored("                 3. Update App                     ","yellow"))
+                    print(colored("                 4. Exit Settings                  ","red"))
+                    print(colored("---------------------------------------------------","cyan"))
+                    while True:
+                        opcion = input("Insert the option: ").strip()
+                        try:
+                            opcionInt = int(opcion)
+                            if opcionInt == 1:
+                               try:
+                                print(colored("[*] Installing app...","cyan"))
+                                locate_installer()
+                               except:
+                                   print(colored("[!] An error has occurred while the app was installing","red"))
+                            elif opcionInt == 2:
+                                try:
+                                    print(colored("[*] Unistalling app...","cyan"))
+                                    locate_unistaller()
+                                except:
+                                    print(colored("[!] An error has occurred while the app was unistalling","red"))
+                            elif opcionInt == 3:
+                                try:
+                                    print(colored("[*] Updating app...","cyan"))
+                                    base_dir = os.path.dirname(os.path.abspath(__file__))
+                                    update_repo(base_dir)
+                                except:
+                                    print(colored("[!] An error has occurred while the app was updating","red"))
+                            elif opcionInt == 4:
+                                print(colored("[!] Exiting of Settings...","green"))
+                                time.sleep(2)
+                                os.system("clear")
+                                menu_options()
+                                break
+                            else:
+                                print(colored("[!] Select a valid option","red"))
+                        except:
+                            print(colored("[!] Insert a valid option -> ex: 1","red"))
+
+                case 8:
                     print(colored("[!] Thank you for using the Sea Tracker by Sergio González Sabucedo!","cyan"))
                     break
                 case default:
