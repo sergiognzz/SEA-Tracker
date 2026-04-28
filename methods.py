@@ -5,6 +5,8 @@ import time
 import os
 from phonenumbers import geocoder, carrier, timezone
 import phonenumbers
+import socket
+from urllib.parse import urlparse
 
 def IP_Track(ip):
     print(colored("=============", "blue") + colored("IP Tracker", "green") + colored("=============", "blue"))
@@ -55,7 +57,8 @@ def menu_options():
     print(colored("3. User tracker", "green"))
     print(colored("4. Show pc info", "green"))
     print(colored("5. Insert target manually", "green"))
-    print(colored("6. Exit", "red"))
+    print(colored("6. Track IP by URL", "green"))
+    print(colored("7. Exit", "red"))
 
 
 def phone_tracker(telephone_number):
@@ -184,7 +187,16 @@ def HelpPanelInsert():
     print(colored("Example: 8.8.8.8 (IP Tracker)","yellow"))
     print(colored("Example: +34123456789 (Phone Tracker)","yellow"))
     print(colored("Example: seergiognzz (User Tracker)","yellow"))
+    print(colored("Example: https://www.google.com (Track IP by URL)","yellow"))
     print("")
+
+def get_ip_from_url(url):
+    try:
+        dominio = urlparse(url).hostname
+        ip = socket.gethostbyname(dominio)
+        print(colored(f"IP address for ", "blue") + colored(url, "cyan") + colored(" -> ", "blue") + colored(ip, "yellow"))
+    except:
+        print(colored(f"Could not resolve IP address for {url}", "red"))
 
 
 def main(target, control):
@@ -257,7 +269,22 @@ def main(target, control):
                             print(colored("[+] Target updated successfully!", "green"))
                     except:
                         print(colored("[!] An error occurred while updating the target.","red"))
+                
                 case 6:
+                    try:
+                        if control:
+                            os.system("clear")
+                            print(colored("[*] Tracking the target...","cyan"))
+                            print("")
+                            time.sleep(2)
+                            get_ip_from_url(target)
+                            print("")
+                            menu_options()
+                        else:
+                            print(colored("[!] No target provided. Please provide a target as a command-line argument.", "red"))
+                    except:
+                        print(colored("[!] An error has occurred while the program is tracking ip of the target url.","red"))
+                case 7:
                     print(colored("[!] Thank you for using the Sea Tracker by Sergio González Sabucedo!","cyan"))
                     break
                 case default:

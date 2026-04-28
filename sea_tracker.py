@@ -28,13 +28,15 @@ def helpPanel():
     print(colored("Example:","yellow")+colored(" python3 sea_tracker.py 8.8.8.8 (ip tracker)", "cyan"))
     print(colored("Example:","yellow")+colored(" python3 sea_tracker.py +34123456789 (phone tracker)", "cyan"))
     print(colored("Example:","yellow")+colored(" python3 sea_tracker.py seergiognzz (user tracker)", "cyan"))
+    print(colored("Example:","yellow")+colored(" python3 sea_tracker.py https://www.google.com (track IP by URL)", "cyan"))
     print("")
     print("")
     print(colored("If you have a tool instelled in the system","yellow"))
     print(colored("Usage: sea-tracker <target>", "green"))
-    print(colored("Example:","yellow")+colored(" sea_tracker 8.8.8.8 (ip tracker)", "cyan"))
-    print(colored("Example:","yellow")+colored(" sea_tracker +34123456789 (phone tracker)", "cyan"))
-    print(colored("Example:","yellow")+colored(" sea_tracker seergiognzz (user tracker)", "cyan"))
+    print(colored("Example:","yellow")+colored(" sea-tracker 8.8.8.8 (ip tracker)", "cyan"))
+    print(colored("Example:","yellow")+colored(" sea-tracker +34123456789 (phone tracker)", "cyan"))
+    print(colored("Example:","yellow")+colored(" sea-tracker seergiognzz (user tracker)", "cyan"))
+    print(colored("Example:","yellow")+colored(" sea-tracker https://www.google.com (track IP by URL)", "cyan"))
     print("")
 
 
