@@ -214,6 +214,8 @@ def get_ip_from_url(url):
 
 
 def update_repo(path):
+    path = os.path.expanduser(path) 
+    
     result = subprocess.run(
         ["git", "-C", path, "pull"],
         capture_output=True,
@@ -325,8 +327,8 @@ def main(target, control):
                             opcionInt = int(opcion)
                             if opcionInt == 1:
                                try:
-                                ruta = os.path.expanduser("~/.config/SEA-tracker")
-                                if os.path.isdir(ruta):
+                                ruta = os.path("/usr/local/bin/sea-tracker")
+                                if os.path.exists(ruta):
                                    print(colored("[!] The App is installed","blue"))
                                 else:
                                     print(colored("[*] Installing app...","cyan"))
@@ -335,8 +337,8 @@ def main(target, control):
                                    print(colored("[!] An error has occurred while the app was installing","red"))
                             elif opcionInt == 2:
                                 try:
-                                    ruta = os.path.expanduser("~/.config/SEA-tracker")
-                                    if os.path.isdir(ruta):
+                                    ruta = os.path("/usr/local/bin/sea-tracker")
+                                    if os.path.exists(ruta):
                                         print(colored("[*] Unistalling app...","cyan"))
                                         locate_unistaller()
                                     else:
@@ -345,9 +347,13 @@ def main(target, control):
                                     print(colored("[!] An error has occurred while the app was unistalling","red"))
                             elif opcionInt == 3:
                                 try:
-                                    print(colored("[*] Updating app...","cyan"))
-                                    base_dir = os.path.dirname(os.path.abspath(__file__))
-                                    update_repo(base_dir)
+                                    ruta = os.path("/usr/local/bin/sea-tracker")
+                                    if os.path.exists(ruta):
+                                        print(colored("[*] Updating app...","cyan"))
+                                        update_repo("~/.config/SEA-tracker")
+                                    else:
+                                        print(colored("[!] The App is not installed","red"))
+                                    
                                 except:
                                     print(colored("[!] An error has occurred while the app was updating","red"))
                             elif opcionInt == 4:
