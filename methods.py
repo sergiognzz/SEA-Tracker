@@ -8,10 +8,20 @@ import phonenumbers
 import subprocess
 import socket
 from urllib.parse import urlparse
+import extraMethods as xm 
 
 def IP_Track(ip):
     print(colored("=============", "blue") + colored("IP Tracker", "green") + colored("=============", "blue"))
     req_api = requests.get(f"http://ipwho.is/{ip}")
+
+    try: #In developing
+        MacDirection = xm.get_mac(ip)
+        open_ports = xm.get_open_ports(ip)
+        ttl = xm.get_ttl_nmap(ip)
+        ttl_str = xm.interpret_ttl(ttl)
+    except:
+        pass
+
     ip_data = json.loads(req_api.text)
 
     time.sleep(2)
@@ -48,6 +58,7 @@ def IP_Track(ip):
     print(colored(" [+] Offset          :", "blue"), colored(ip_data["timezone"]["offset"], "green"))
     print(colored(" [+] UTC             :", "blue"), colored(ip_data["timezone"]["utc"], "green"))
     print(colored(" [+] Current Time    :", "blue"), colored(ip_data["timezone"]["current_time"], "green"))
+
 
 
 def menu_options():
