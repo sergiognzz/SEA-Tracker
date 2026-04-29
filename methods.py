@@ -325,14 +325,22 @@ def main(target, control):
                             opcionInt = int(opcion)
                             if opcionInt == 1:
                                try:
-                                print(colored("[*] Installing app...","cyan"))
-                                locate_installer()
+                                ruta = os.path.expanduser("~/.config/SEA-tracker")
+                                if os.path.isdir(ruta):
+                                   print(colored("[!] The App is installed","blue"))
+                                else:
+                                    print(colored("[*] Installing app...","cyan"))
+                                    locate_installer()
                                except:
                                    print(colored("[!] An error has occurred while the app was installing","red"))
                             elif opcionInt == 2:
                                 try:
-                                    print(colored("[*] Unistalling app...","cyan"))
-                                    locate_unistaller()
+                                    ruta = os.path.expanduser("~/.config/SEA-tracker")
+                                    if os.path.isdir(ruta):
+                                        print(colored("[*] Unistalling app...","cyan"))
+                                        locate_unistaller()
+                                    else:
+                                        print(colored("[!] The App is not installed","red"))
                                 except:
                                     print(colored("[!] An error has occurred while the app was unistalling","red"))
                             elif opcionInt == 3:
