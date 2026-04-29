@@ -228,7 +228,7 @@ def update_repo():
             path
         ], check=True)
 
-        print("Repo actualizado correctamente")
+        print(colored("[+] The app has been updated","magenta"))
 
     except Exception as e:
         print(f"Error actualizando repo: {e}")
