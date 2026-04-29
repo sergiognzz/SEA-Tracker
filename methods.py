@@ -327,7 +327,7 @@ def main(target, control):
                             opcionInt = int(opcion)
                             if opcionInt == 1:
                                try:
-                                ruta = os.path("/usr/local/bin/sea-tracker")
+                                ruta = "/usr/local/bin/sea-tracker"
                                 if os.path.exists(ruta):
                                    print(colored("[!] The App is installed","blue"))
                                 else:
@@ -337,7 +337,7 @@ def main(target, control):
                                    print(colored("[!] An error has occurred while the app was installing","red"))
                             elif opcionInt == 2:
                                 try:
-                                    ruta = os.path("/usr/local/bin/sea-tracker")
+                                    ruta = "/usr/local/bin/sea-tracker"
                                     if os.path.exists(ruta):
                                         print(colored("[*] Unistalling app...","cyan"))
                                         locate_unistaller()
@@ -347,7 +347,7 @@ def main(target, control):
                                     print(colored("[!] An error has occurred while the app was unistalling","red"))
                             elif opcionInt == 3:
                                 try:
-                                    ruta = os.path("/usr/local/bin/sea-tracker")
+                                    ruta = "/usr/local/bin/sea-tracker"
                                     if os.path.exists(ruta):
                                         print(colored("[*] Updating app...","cyan"))
                                         update_repo("~/.config/SEA-Tracker")
