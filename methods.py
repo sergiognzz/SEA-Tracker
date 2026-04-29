@@ -350,7 +350,7 @@ def main(target, control):
                                     ruta = os.path("/usr/local/bin/sea-tracker")
                                     if os.path.exists(ruta):
                                         print(colored("[*] Updating app...","cyan"))
-                                        update_repo("~/.config/SEA-tracker")
+                                        update_repo("~/.config/SEA-Tracker")
                                     else:
                                         print(colored("[!] The App is not installed","red"))
                                     
