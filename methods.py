@@ -213,19 +213,25 @@ def get_ip_from_url(url):
         print(colored(f"Could not resolve IP address for {url}", "red"))
 
 
-def update_repo(path):
-    path = os.path.expanduser(path) 
-    
-    result = subprocess.run(
-        ["git", "-C", path, "pull"],
-        capture_output=True,
-        text=True
-    )
-    
-    if result.returncode != 0:
-        raise Exception(result.stderr)
-    
-    return result.stdout
+def update_repo():
+    path = os.path.expanduser("~/.config/SEA-Tracker")
+
+    try:
+        
+        if os.path.exists(path):
+            subprocess.run(["rm", "-rf", path], check=True)
+
+        
+        subprocess.run([
+            "git", "clone",
+            "https://github.com/sergiognzz/SEA-Tracker.git",
+            path
+        ], check=True)
+
+        print("Repo actualizado correctamente")
+
+    except Exception as e:
+        print(f"Error actualizando repo: {e}")
 
 
 def main(target, control):
@@ -350,7 +356,7 @@ def main(target, control):
                                     ruta = "/usr/local/bin/sea-tracker"
                                     if os.path.exists(ruta):
                                         print(colored("[*] Updating app...","cyan"))
-                                        update_repo("~/.config/SEA-Tracker")
+                                        update_repo()
                                     else:
                                         print(colored("[!] The App is not installed","red"))
                                     
